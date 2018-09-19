@@ -2,12 +2,10 @@
 title: Hexo使用NexT主题
 date: 2018-09-14 16:20:22
 updated: 2018-09-14 16:20:22
-tags: Hexo
-categories: Diary
+tags: Next主题
+categories: Hexo
 comments: true
 ---
-
-### **Hexo使用NexT主题** 
 
 #### 安装
 
@@ -20,6 +18,8 @@ comments: true
 所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 站点配置文件( _config.yml)， 找到 `theme` 字段，并将其值更改为 `next` 
 
 `theme: next `
+
+<!--more-->
 
 #### 主题设定
 

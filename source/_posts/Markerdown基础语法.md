@@ -2,8 +2,8 @@
 title: MarkerDown基础语法
 date: 2018-09-14 16:20:22
 updated: 2018-09-14 16:20:22
-tags: MarkerDowny
-categories: Diary
+tags: MarkerDown
+categories: MarkerDown
 comments: true
 ---
 
@@ -18,6 +18,8 @@ comments: true
 ##### 这是五级标题
 ###### 这是六级标题
 ```
+
+<!--more-->
 
 # 2.字体
 

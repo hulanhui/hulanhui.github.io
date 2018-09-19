@@ -3,7 +3,7 @@ title: Hexo&Github搭建自己的博客
 date: 2018-09-14 16:20:22
 updated: 2018-09-14 16:20:22
 tags: Hexo
-categories: Diary
+categories: Hexo
 comments: true
 ---
 
@@ -38,7 +38,7 @@ comments: true
 
 到这步一步，项目能本地访问啦，接下来同步到github上让外网能直接访问！
 
----
+<!--more-->
 
 #### 5、使用git 生成ssh key 
 
