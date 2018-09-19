@@ -1,7 +1,10 @@
 ---
 title: Hexo&Github搭建自己的博客
 date: 2018-09-14 16:20:22
+updated: 2018-09-14 16:20:22
 tags: Hexo
+categories: Diary
+comments: true
 ---
 
 
