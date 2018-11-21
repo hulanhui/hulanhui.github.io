@@ -1,5 +1,5 @@
 ---
-title: Hexo&Github解决多终端同步
+title: Hexo发布文章和同步
 date: 2018-09-14 16:20:22
 updated: 2018-09-14 16:20:22
 tags: Hexo
