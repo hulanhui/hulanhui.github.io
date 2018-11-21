@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="event," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="规范分类 启动与结束事件 (start &amp;amp;end event) 顺序流 (sequence flow) 任务 (task) 网关(geteway) 子流程(subprocess) 边界事件(boundary event) 中间事件(intermediate event) 监听器(listener)">
+<meta name="keywords" content="event">
+<meta property="og:type" content="article">
+<meta property="og:title" content="activiti-基础">
+<meta property="og:url" content="http://yoursite.com/2018/08/18/activiti规范/index.html">
+<meta property="og:site_name" content="Java">
+<meta property="og:description" content="规范分类 启动与结束事件 (start &amp;amp;end event) 顺序流 (sequence flow) 任务 (task) 网关(geteway) 子流程(subprocess) 边界事件(boundary event) 中间事件(intermediate event) 监听器(listener)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-18T08:20:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="activiti-基础">
+<meta name="twitter:description" content="规范分类 启动与结束事件 (start &amp;amp;end event) 顺序流 (sequence flow) 任务 (task) 网关(geteway) 子流程(subprocess) 边界事件(boundary event) 中间事件(intermediate event) 监听器(listener)">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/18/activiti规范/"/>
+
+
+
+
+
+  <title>activiti-基础 | Java</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c32be53cff954bf280bd487163a0078c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/hulanhui/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Java</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java world</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/18/activiti规范/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lan Hui · Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Java">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">activiti-基础</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T16:20:22+08:00">
+                2018-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/activiti/" itemprop="url" rel="index">
+                    <span itemprop="name">activiti</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h3><h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><ul>
+<li>启动与结束事件 (start &amp;end event)</li>
+<li>顺序流 (sequence flow)</li>
+<li>任务 (task)</li>
+<li>网关(geteway)</li>
+<li>子流程(subprocess)</li>
+<li>边界事件(boundary event)</li>
+<li>中间事件(intermediate event)</li>
+<li>监听器(listener)</li>
+</ul>
+<a id="more"></a>
+<h4 id="启动与结束事件"><a href="#启动与结束事件" class="headerlink" title="启动与结束事件"></a>启动与结束事件</h4><blockquote>
+<p> 启动事件：细圆圈表示，捕获型(等待触发：runtimeService.startProcessInstance)</p>
+</blockquote>
+<ul>
+<li><p><strong>空启动事件</strong>：基本的启动事件，空的细圆圈符号</p>
+<ul>
+<li><p>activiti扩展空启动属性</p>
+</li>
+<li><p>activiti:fromKey，记录空启动事件关联的表单文件</p>
+<ul>
+<li><p>外置表单：表单内容都存放在单独的.form 文件中，activiti:formkey 就用来指定那个表单文件</p>
+</li>
+<li><p>动态表单：此类型不在用activiti:formkey来指定，而是在流程定义文件中设置表单元素集合</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activiti:formProperty</span> <span class="attr">id</span>=<span class="string">"name"</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">type</span>=<span class="string">"string"</span>&gt;</span>/aciviti:formProperty&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>activiti:initiator，记录启动流程人ID</p>
+</li>
+</ul>
+</li>
+<li><p><strong>定时启动事件</strong>：一次性启动，特定时间间隔启动，圆圈中时钟符号</p>
+<ul>
+<li><p>在基本的启动事件中嵌套了一个定时事件定义timerEventDefinition</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">startEvent</span> <span class="attr">id</span>=<span class="string">"timerstartevent"</span> <span class="attr">name</span>=<span class="string">"timer start"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">timerEventDefinition</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--定时日期类型--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">timeCycle</span>&gt;</span>用ISO 8601标志表示<span class="tag">&lt;/<span class="name">timeCycle</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">timeEventDefinition</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">startEvent</span>&gt;</span></span><br><span class="line">定时日期类型</span><br><span class="line">timeDate:一次启动，具体到日期</span><br><span class="line">timeDuration：设置多长时间后启动</span><br><span class="line">timeCycle：周期性启动，循环执行</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>异常启动事件</strong>：不能通过API触发，它总是在另外一个流程抛出异常结束事件的时候被触发</p>
+<ul>
+<li><p>类比java中的异常，throw是异常结束，catch是异常启动</p>
+</li>
+<li><p>圆圈中雷电符号</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">startEvent</span> <span class="attr">id</span>=<span class="string">"errorstartevent1"</span> <span class="attr">name</span>=<span class="string">"error start"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">errorEventDefinition</span> <span class="attr">errorRef</span>=<span class="string">"AIA001"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">startEvent</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><strong>消息启动事件</strong>：通过一个消息名称触发启动，也可以结合消息抛出事件一起使用</p>
+<ul>
+<li><p>西圆圈中嵌入一个空心的信封图表</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">message</span> <span class="attr">id</span>=<span class="string">"resendFile"</span> <span class="attr">name</span>=<span class="string">"重新发送文件"</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">startEvent</span> <span class="attr">id</span>=<span class="string">"messageStart"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">messageEventDefinition</span> <span class="attr">messageRef</span>=<span class="string">"reSendFile"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">startEvent</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p><strong>结束事件</strong>：粗圆圈表示，抛出型()</p>
+</blockquote>
+<ul>
+<li><p><strong>空结束事件</strong>：结束</p>
+</li>
+<li><p><strong>异常结束事件</strong>：粗圆圈里有雷电符号</p>
+<ul>
+<li>定义抛出的错误代码，如果找到了异常开始时间定义的异常代码，则触发异常开始事件，类似于钩子</li>
+<li>异常事件错误代码不能为空</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">endEvent</span> <span class="attr">id</span>=<span class="string">"errorstartevent1"</span> <span class="attr">name</span>=<span class="string">"error end"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">errorEventDefinition</span> <span class="attr">errorRef</span>=<span class="string">"AIA001"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">endEvent</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>终止结束事件</strong>：结束整个流程实例。空结束事件中间加一个实心原点</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">endEvent</span> <span class="attr">id</span>=<span class="string">"errorstartevent1"</span> <span class="attr">name</span>=<span class="string">"error end"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">terminateEventDefinition</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">endEvent</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>取消结束事件</strong>：可以取消一个事物子流程，空结束事件嵌入一个“X”图形</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">endEvent</span> <span class="attr">id</span>=<span class="string">"errorstartevent1"</span> <span class="attr">name</span>=<span class="string">"error end"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">cancelEventDefinition</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">endEvent</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="顺序流"><a href="#顺序流" class="headerlink" title="顺序流"></a>顺序流</h4><ul>
+<li><p><strong>标准顺序流</strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sequenceFlow</span> <span class="attr">id</span>=<span class="string">"flow"</span> <span class="attr">sourceRef</span>=<span class="string">"startEvent"</span> <span class="attr">targetRef</span>=<span class="string">"userTastk"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>sourceRef 执行顺序流的源</p>
+<p>targetRef属性执行目的模型</p>
+</li>
+<li><p><strong>条件顺序流</strong></p>
+<p>标准流上添加条件表达式</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">sequenceFlow</span> <span class="attr">id</span>=<span class="string">"flow"</span> <span class="attr">sourceRef</span>=<span class="string">"startEvent"</span> <span class="attr">targetRef</span>=<span class="string">"userTastk"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">conditionExpression</span> <span class="attr">xsi:type</span>=<span class="string">"tFormalExpression"</span>&gt;</span></span><br><span class="line">		&lt;![CDATA[$&#123;pass==true&#125;]]&gt;</span><br><span class="line">	<span class="tag">&lt;/<span class="name">conditionExpression</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">sequenceFlow</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>xsi:type指定表达式类型，目前条件表达式只支持UEL</p>
+</li>
+</ul>
+<h4 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h4><ul>
+<li><p><strong>用户任务(userTask)</strong></p>
+<p><code></code>humanPerFormer<code></code>formalExpression` 将任务分配给用户</p>
+<p><code>potentialOwner</code> <code>formalExpression</code>  将用户和组混合分配</p>
+<ul>
+<li><p>activiti扩展用户任务属性</p>
+<ul>
+<li><p>activiti:assigness:指定单个用户任务处理人 代替humanPerFormer</p>
+</li>
+<li><p>activiti:cadidateUsers:指定用户任务多个候选人，多个逗号分开 代替potentialOwner</p>
+</li>
+<li><p>activiti:cadidateGroups:指定候选组，逗号分开,代替potentialOwner</p>
+</li>
+<li><p>activiti:dueDate：设置用户任务到期日</p>
+</li>
+<li><p>activiti:priority:用户任务优先级[0,100]</p>
+</li>
+<li><p>activiti允许任务上添加任务监听</p>
+<ul>
+<li><p>选项有：create创建任务、assignment分配任务、complete完成任务</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">userTask</span> <span class="attr">id</span>=<span class="string">"..."</span> <span class="attr">name</span>=<span class="string">"..."</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">extensionElements</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">activiti:taskListener</span> <span class="attr">class</span>=<span class="string">"..."</span> <span class="attr">event</span>=<span class="string">"complete"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">extensionElements</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">userTask</span>&gt;</span></span><br><span class="line">除了class属性指定文件之外，还可以定义expression和delegateExpression以表达式方式处理</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>脚本任务(scriptTask) </strong></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">scriptTask</span> <span class="attr">id</span>=<span class="string">"..."</span> <span class="attr">name</span>=<span class="string">"..."</span> <span class="attr">scriptFormat</span>=<span class="string">"指定脚本任务类型(groovy,javascript,juel)"</span>&gt;</span></span><br><span class="line">	...</span><br><span class="line"><span class="tag">&lt;/<span class="name">scriptTask</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>web service任务(serviceTask)</strong></p>
+<ul>
+<li>调用外部的webservice自选，支持标准的webservice和rest分隔的service</li>
+</ul>
+</li>
+<li><p><strong>业务规则任务(businessRuleTask)</strong></p>
+<ul>
+<li><p>支持jboss规则引擎drools，只要把流程文件和规则引擎文件.drl 一同打包部署系统中，并加入jar即可。</p>
+</li>
+<li><p>概念：就是把业务收交由规则引擎处理，规则引擎根据各种条件判断计算出最终将结果，最后把结果返回给调用者，调用者为流程引擎</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">businessRuleTask</span> <span class="attr">id</span>=<span class="string">"..."</span> <span class="attr">name</span>=<span class="string">"..."</span> <span class="attr">activiti:rules</span>=<span class="string">"rule1,rule2"</span> <span class="attr">activiti:ruleVariablesInput</span>=<span class="string">"$&#123;message&#125;"</span> </span></span><br><span class="line"><span class="tag">	<span class="attr">activiti:exclude</span>=<span class="string">"false"</span> <span class="attr">activiti:resultVariableName</span>=<span class="string">"relesOutput"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">businessRuleTask</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>扩展属性：便于与Drools整合</p>
+<ul>
+<li>activiti:rules：在drl规则文件中定义的规则，多个逗号分开，空执行全部规则</li>
+<li>activiti:ruleVariablesInput：业务执行需要的数据源，多个逗号分开</li>
+<li>activiti:exclude：设置是否排除某些规则，值为false则不排除，值为true则忽略规则<ul>
+<li>如果activiti:rules为空同时activiti:exclude为false，则不执行任何规则</li>
+</ul>
+</li>
+<li>activiti:resultVariableName：规则执行结果变量</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>邮件任务</strong>：(不属于BPMN2.0规范，activiti在serviceTask上扩展任务 activit:type=”email”)</p>
+<ul>
+<li>通过activiti发送邮件，需要配置邮件服务器</li>
+</ul>
+</li>
+<li><p><strong>mule任务</strong>：(不属于BPMN2.0规范,使用sendTask)</p>
+</li>
+<li><p><strong>camel任务</strong>：(不属于BPMN2.0规范,serivceTask扩展的任务模型)</p>
+</li>
+<li><p><strong>手动任务</strong>：(manualTask) 仅仅用来定义bpm不能完成的任务，人工建模</p>
+</li>
+<li><p><strong>java service任务</strong>：(不属于BPMN2.0规范，activiti扩展的java语言的serviceTask)</p>
+</li>
+<li><p><strong>shell任务</strong>：执行本地操作系统中的脚本、命令，基于serviceTask的扩展(activit:type=”shell”)</p>
+</li>
+<li><p><strong>接收任务(receiveTask)</strong>：功能简单且单一任务，只能通过runtimeService接口的signal方法触发接收任务</p>
+</li>
+<li><p><strong>多实例</strong></p>
+<ul>
+<li>多实例语序业务流程中某一个任务甚至子流程可以重复执行多次。多个实例可以选择顺序执行，还可以选择并行执行多实例任务或子流程</li>
+<li>多实例支持的任务类型：用户、脚本、javaservice、webservice、业务规则、邮件、手动任务、接收任务、子流程</li>
+<li>多实例的几个属性变量可以通过execution.getVariable()获取<ul>
+<li>nrOfInstances：实例总数</li>
+<li>nrOfActiveInstances:当前活动为完成的实例数量，对于按照顺序执行的多实例，该值为1</li>
+<li>nrOfCompletedInstances：已经完成的实例数量</li>
+<li>loopCounter：多实例运行过程中,for-each循环中当前的索引值</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="网关"><a href="#网关" class="headerlink" title="网关"></a>网关</h4><ul>
+<li><p><strong>排它网关</strong>(exclusive gateway)：用来对流程中的决定进行建模，多个线路计算结果都为true，那么只会执行第一个true的网关，如果多个没有true，那么抛出异常，需要配合条件孙序列配合使用</p>
+</li>
+<li><p><strong>并行网关</strong>(parallel gateway)：对并发的任务进行流程建模，单个任务拆分多个或将多个合并</p>
+<ul>
+<li>并行网关功能取决于输入、输出流</li>
+</ul>
+</li>
+<li><p><strong>包容网关</strong>(inclusive gateway)：包含排它网关和并行网关</p>
+</li>
+<li><p><strong>事件网关</strong>(event gateway)</p>
+</li>
+</ul>
+<h4 id="子流程与调用活动"><a href="#子流程与调用活动" class="headerlink" title="子流程与调用活动"></a>子流程与调用活动</h4><ul>
+<li><strong>子流程</strong>：<code>subProcess</code></li>
+<li><strong>调用活动</strong>：解决流程的通用性，和子流程作用一直，但是表现方式不同，使用一个调用活动取代嵌入式流程方式的活动即可。</li>
+<li><strong>事件子流程</strong>：事件子流程和子流程类似，把一系列的活动归结到一起处理，不同的是事件子流程不能直接启动，而要被动的由其他事件触发启动。添加了一个 <strong><code>triggeredByEvent</code></strong> 属性表示此至子流程只能由事件触发后被动启动。</li>
+<li><strong>事物子流程</strong>：也称为事务块，用来处理一组必须在同一个事务中完成的活动，具有ACID特性。</li>
+</ul>
+<h4 id="边界与中间事件"><a href="#边界与中间事件" class="headerlink" title="边界与中间事件"></a>边界与中间事件</h4><ul>
+<li><p><strong>边界事件(boundaryEvent)</strong></p>
+<ul>
+<li><p>是绑定在活动上的 ”捕获型“ 事件，会一直监听所有处于运行中活动的某种事件的触发。一旦触发边界事件，当前的活动就会被终端，然后按照边界事件之后的输出流执行。每个边界事件类型都是通过属性<strong><code>attachedToRef</code></strong> 指定 “附加” 到抛出边界事件的活动上。</p>
+</li>
+<li><p>所有的边界事件子类型都需要包含在 <strong><code>boundaryEvent</code> </strong>标签中。<code>cancelAcitivity</code> 属性可以取 <code>true</code>  和<code>false</code> 两个值，用来指定捕获边界事件之后是否取消执行输出流指定的活动。</p>
+</li>
+<li><p><strong>定时器边界事件</strong>：timerEventDefinition</p>
+</li>
+<li><p><strong>异常边界事件</strong>：errorEventDefinition</p>
+</li>
+<li><p><strong>信号边界事件</strong>：signalEventDefinition</p>
+</li>
+<li><p><strong>取消边界事件</strong>：cancelEventDefinition</p>
+</li>
+<li><p><strong>补偿边界事件</strong>：compensateEventDefinition</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p><strong>中间捕获事件(intermediateCatchEvent)</strong></p>
+<ul>
+<li>根据事件的不同类型需要使用不同的方式才能继续执行后续的输出流的活动。</li>
+<li>边界事件需要附加在一个活动上，不需要输入流，而中间捕获事件必须连接一个输入流和输出流，所以根据这个特性命名为中间捕获事件。</li>
+<li><strong>定时器中间捕获事件 </strong>：timerEventDefinition</li>
+<li><strong>信号中间捕获事件</strong>：signalEventDefinition</li>
+<li><strong>消息中间捕获事件</strong>：messageEventDefinition</li>
+</ul>
+</li>
+<li><p><strong>中间抛出事件(intermediateThrowEvent)</strong></p>
+<ul>
+<li><strong>空中间抛出事件</strong>：timerEventDefinition</li>
+<li><strong>信号中间抛出事件</strong>：signalEventDefinition</li>
+</ul>
+</li>
+</ul>
+<h4 id="监听器"><a href="#监听器" class="headerlink" title="监听器"></a>监听器</h4><ul>
+<li>监听器是在规范基础上扩展的功能，通过配置监听器的方法监听各种动作，如流程启动、结束、创建、完成等</li>
+<li>类型：执行监听器、任务监听器</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/event/" rel="tag"># event</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/19/用户与组及部署管理/" rel="prev" title="activiti-用户与组及部署管理">
+                activiti-用户与组及部署管理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/favicon.png"
+                alt="Lan Hui · Hu" />
+            
+              <p class="site-author-name" itemprop="name">Lan Hui · Hu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#规范"><span class="nav-number">1.</span> <span class="nav-text">规范</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分类"><span class="nav-number">1.1.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动与结束事件"><span class="nav-number">1.2.</span> <span class="nav-text">启动与结束事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序流"><span class="nav-number">1.3.</span> <span class="nav-text">顺序流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#任务"><span class="nav-number">1.4.</span> <span class="nav-text">任务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#网关"><span class="nav-number">1.5.</span> <span class="nav-text">网关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子流程与调用活动"><span class="nav-number">1.6.</span> <span class="nav-text">子流程与调用活动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#边界与中间事件"><span class="nav-number">1.7.</span> <span class="nav-text">边界与中间事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#监听器"><span class="nav-number">1.8.</span> <span class="nav-text">监听器</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lan Hui · Hu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>

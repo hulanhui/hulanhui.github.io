@@ -1,0 +1,2410 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="procedures change the world java change the future">
+<meta name="keywords" content="Java">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Java">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Java">
+<meta property="og:description" content="procedures change the world java change the future">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java">
+<meta name="twitter:description" content="procedures change the world java change the future">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>Java</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c32be53cff954bf280bd487163a0078c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+    <a href="https://github.com/hulanhui/"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png" alt="Fork me on GitHub"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Java</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Java world</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/21/Dockfile/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lan Hui · Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Java">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/21/Dockfile/" itemprop="url">Dockerfile</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-21T10:00:00+08:00">
+                2018-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Dockfile"><a href="#Dockfile" class="headerlink" title="Dockfile"></a>Dockfile</h3><p>Dockfile是一个用于编写docker镜像生成过程的文件，其有特定的语法。在一个文件夹中，如果有一个名字为Dockfile的文件，其内容满足语法要求，在这个文件夹路径下执行命令:</p>
+<p><code>docker build --tag name:tag .</code>，就可以按照描述构建一个镜像了。</p>
+<p>name是镜像的名称，</p>
+<p>tag是镜像的版本或者是标签号，</p>
+<p>不写就是lastest。注意后面有一个空格和点。 </p>
+<p>Dockerfile详解 Dockerfile 分为四部分：</p>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><h4 id="FROM"><a href="#FROM" class="headerlink" title="FROM "></a><strong>FROM </strong></h4><p><strong>指定基础镜像，要在哪个镜像建立</strong></p>
+<blockquote>
+<p>格式为 <code>FROM &lt;image&gt; 或FROM &lt;image&gt;:&lt;tag&gt;</code></p>
+</blockquote>
+<p>说明：第一个指令必须是FROM了，其指定一个构建镜像的基础源镜像，如果本地没有就会从公共库中拉取，没有指定镜像的标签会使用默认的latest标签，可以出现多次，如果需要在一个Dockerfile中构建多个镜像。 </p>
+<h4 id="MAINTAINER"><a href="#MAINTAINER" class="headerlink" title="MAINTAINER"></a><strong>MAINTAINER</strong></h4><p><strong>描述镜像的创建者，名称和邮箱 </strong></p>
+<blockquote>
+<p>格式为 <code>MAINTAINER &lt;name&gt; &lt;email&gt;</code></p>
+</blockquote>
+<h4 id="RUN"><a href="#RUN" class="headerlink" title="RUN"></a><strong>RUN</strong></h4><p><strong>在镜像中要执行的命令</strong></p>
+<blockquote>
+<p>格式为 <code>RUN &lt;command&gt; 或 RUN [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code></p>
+</blockquote>
+<p>说明：前者将在 shell 终端中运行命令，即 /bin/bash -c ；</p>
+<p>后者则使用 exec 执行。指定使用其它终端可以通过第二种方式实现，</p>
+<p>例如 <code>RUN [“/bin/bash”, “-c”,”echo hello”]</code> 。</p>
+<h4 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a><strong>WORKDIR</strong></h4><p><strong>指定当前工作目录，相当于 cd</strong></p>
+<blockquote>
+<p>格式为 <code>WORKDIR /path/to/workdir</code></p>
+</blockquote>
+<p>说明：为后续的 RUN 、 CMD 、 ENTRYPOINT 指令配置工作目录。<br>可以使用多个 WORKDIR 指令，后续命令如果参数是相对路径，则会基于之前命令指定的路径。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">WORKDIR /a</span><br><span class="line">WORKDIR b</span><br><span class="line">WORKDIR c</span><br><span class="line">RUN pwd</span><br><span class="line">则最终路径为 /a/b/c</span><br></pre></td></tr></table></figure>
+<h4 id="EXPOSE"><a href="#EXPOSE" class="headerlink" title="EXPOSE"></a><strong>EXPOSE</strong></h4><p><strong>指定容器要打开的端口</strong></p>
+<blockquote>
+<p>格式为 <code>EXPOSE &lt;port&gt; [&lt;port&gt;...]</code></p>
+</blockquote>
+<p>说明：告诉 Docker 服务端容器暴露的端口号，供互联系统使用。在启动容器时需要通过 -P，Docker 主机会自动分配一个端口转发到指定的端口。在docker run -p的时候生效。 </p>
+<h4 id="ENV"><a href="#ENV" class="headerlink" title="ENV"></a><strong>ENV</strong></h4><p><strong>定义环境变量</strong></p>
+<p>格式为 <code>ENV &lt;key&gt; &lt;value&gt;</code> 。 指定一个环境变量，会被后续 RUN 指令使用，并在容器运行时保持。<br>例如</p>
+<blockquote>
+<p><code>ENV PATH /usr/local/nginx/sbin:$PATH</code></p>
+</blockquote>
+<p>说明：设置容器的环境变量，可以让其后面的RUN命令使用，容器运行的时候这个变量也会保留。 </p>
+<h4 id="COPY"><a href="#COPY" class="headerlink" title="COPY"></a><strong>COPY</strong></h4><p><strong>复制本地主机的 （为 Dockerfile 所在目录的相对路径）到容器中的</strong></p>
+<blockquote>
+<p>格式为 COPY <src> <dest> </dest></src></p>
+</blockquote>
+<p>说明：COPY除了不能自动解压，也不能复制网络文件。其它功能和ADD相同。 </p>
+<h4 id="ADD"><a href="#ADD" class="headerlink" title="ADD"></a><strong>ADD</strong></h4><p><strong>相当于 COPY，但是比 COPY 功能更强大</strong></p>
+<blockquote>
+<p>格式为 <code>ADD &lt;src&gt; &lt;dest&gt;</code></p>
+</blockquote>
+<p>说明：该命令将复制指定的 到容器中的 。 其中 可以是Dockerfile所在目录的一个相对路径；也可以是一个 URL；还可以是一个 tar 文件，复制进容器会自动解压。</p>
+<p>复制本机文件或目录或远程文件，添加到指定的容器目录，支持GO的正则模糊匹配。路径是绝对路径，不存在会自动创建。如果源是一个目录，只会复制目录下的内容，目录本身不会复制。ADD命令会将复制的压缩文件夹自动解压，这也是与COPY命令最大的不同。 </p>
+<h4 id="VOLUME"><a href="#VOLUME" class="headerlink" title="VOLUME"></a><strong>VOLUME</strong></h4><p><strong>挂载目录</strong></p>
+<blockquote>
+<p>格式为<code>VOLUME [&quot;/data&quot;]</code></p>
+</blockquote>
+<p>说明：创建一个可以从本地主机或其他容器挂载的挂载点，一般用来存放数据库和需要保持的数据等。</p>
+<h4 id="USER"><a href="#USER" class="headerlink" title="USER"></a><strong>USER</strong></h4><blockquote>
+<p>格式为 <code>USER daemon</code></p>
+</blockquote>
+<p>说明：指定运行容器时的用户名或 UID，后续的 RUN 也会使用指定用户。当服务不需要管理员权限时，可以通过该命令指定运行用户。并且可以在之前创建所需要的用户，例如： RUN useradd -s /sbin/nologin -M www。</p>
+<h4 id="ENTRYPOINT"><a href="#ENTRYPOINT" class="headerlink" title="ENTRYPOINT"></a><strong>ENTRYPOINT</strong></h4><p>两种格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</span><br><span class="line">ENTRYPOINT command param1 param2 （shell中执行）</span><br></pre></td></tr></table></figure>
+<p>配置容器启动后执行的命令，并且不可被 docker run 提供的参数覆盖。每个 Dockerfile 中只能有一个 ENTRYPOINT ，当指定多个时，只有最后一个起效。</p>
+<h4 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a><strong>CMD</strong></h4><p>支持三种格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;] 使用 exec 执行，推荐方式；</span><br><span class="line">CMD command param1 param2 在 /bin/bash 中执行，提供给需要交互的应用；</span><br><span class="line">CMD [&quot;param1&quot;,&quot;param2&quot;] 提供给 ENTRYPOINT 的默认参数；</span><br></pre></td></tr></table></figure>
+<p>指定启动容器时执行的命令，每个 Dockerfile 只能有一条 CMD 命令。如果指定了多条命令，只有最后一条会被执行。如果用户启动容器时候指定了运行的命令，则会覆盖掉 CMD 指定的命令。</p>
+<h4 id="ONBUILD"><a href="#ONBUILD" class="headerlink" title="ONBUILD"></a><strong>ONBUILD</strong></h4><p><strong>在构建本镜像时不生效，在基于此镜像构建镜像时生效</strong></p>
+<blockquote>
+<p>格式为 <code>ONBUILD [INSTRUCTION]</code></p>
+</blockquote>
+<p>配置当所创建的镜像作为其它新创建镜像的基础镜像时，所执行的操作指令。</p>
+<p>ENTRYPOINT 和 CMD 的区别：ENTRYPOINT 指定了该镜像启动时的入口，CMD 则指定了容器启动时的命令，当两者共用时，完整的启动命令像是 ENTRYPOINT + CMD 这样。使用 ENTRYPOINT 的好处是在我们启动镜像就像是启动了一个可执行程序，在 CMD 上仅需要指定参数；另外在我们需要自定义 CMD 时不容易出错。</p>
+<p>使用 CMD 的 Dockerfile：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@sta2 test]# cat Dockerfile </span><br><span class="line">FROM mysql</span><br><span class="line">CMD [&quot;echo&quot;,&quot;test&quot;]</span><br></pre></td></tr></table></figure>
+<p>使用 ENTRYPOINT 的 Dockerfile：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@sta2 entrypoint]#  cat  Dockerfile </span><br><span class="line">FROM mysql</span><br><span class="line">ENTRYPOINT [&quot;echo&quot;,&quot;test&quot;]</span><br></pre></td></tr></table></figure>
+<p>结论：ENTRYPOINT 不能覆盖掉执行时的参数，CMD 可以掉覆盖默认的参数。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/21/docker命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lan Hui · Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Java">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/21/docker命令/" itemprop="url">Docker命令</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-21T10:00:00+08:00">
+                2018-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h4><blockquote>
+<p>Docker是一个开源的引擎，可以轻松的为任何应用创建一个轻量级的、可移植的、自给自足的容器</p>
+</blockquote>
+<h4 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h4><ul>
+<li>web应用的自动化打包和发布；</li>
+<li>自动化测试和持续集成、发布；</li>
+<li>在服务型环境中部署和调整数据库或其他的后台应用；</li>
+<li>从头编译或者扩展现有的OpenShift或Cloud Foundry平台来搭建自己的PaaS环境。</li>
+</ul>
+<h4 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h4><ul>
+<li>Docker系统有两个程序：docker服务端和docker客户端</li>
+<li>Docker有很多种安装的选择，我们推荐您在Ubuntu下面安装，因为docker是在Ubuntu下面开发的，安装包测试比较充分，可以保证软件包的可用性。Mac, windows和其他的一些linux发行版本无法原生运行Docker，可以使用虚拟软件创建一个ubuntu的虚拟机并在里面运行docker。</li>
+</ul>
+<h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><ul>
+<li>启动：service docker start</li>
+<li>停止：service docker stop</li>
+<li>是否运行：ps aux | grep docker</li>
+</ul>
+<h4 id="docker命令"><a href="#docker命令" class="headerlink" title="docker命令"></a>docker命令</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br></pre></td><td class="code"><pre><span class="line">显示docker版本：docker version</span><br><span class="line">显示docker系统信息：docker info </span><br><span class="line">生命周期类</span><br><span class="line">* 运行：docker run [OPTIONS] IMAGE [COMMAND] [ARG...]</span><br><span class="line">    使用docker镜像nginx:latest以后台模式启动一个容器,并将容器命名为mynginx。</span><br><span class="line">    docker run --name mynginx -d nginx:latest</span><br><span class="line">    使用镜像nginx:latest以后台模式启动一个容器,并将容器的80端口映射到主机随机端口。</span><br><span class="line">    docker run -P -d nginx:latest</span><br><span class="line">    使用镜像 nginx:latest，以后台模式启动一个容器,将容器的 80 端口映射到主机的 80 端口,主机的目录 		/data 映射到容器的 /data。</span><br><span class="line">    docker run -p 80:80 -v /data:/data -d nginx:latest</span><br><span class="line">    绑定容器的 8080 端口，并将其映射到本地主机 127.0.0.1 的 80 端口上。</span><br><span class="line">    docker run -p 127.0.0.1:80:8080/tcp ubuntu bash</span><br><span class="line">    使用镜像nginx:latest以交互模式启动一个容器,在容器内执行/bin/bash命令。</span><br><span class="line">    runoob@runoob:~$ docker run -it nginx:latest /bin/bash</span><br><span class="line">* 启动：docker start [OPTIONS] CONTAINER [CONTAINER...]</span><br><span class="line">* 停止：docker stop [OPTIONS] CONTAINER [CONTAINER...]</span><br><span class="line">* 重启：docker restart [OPTIONS] CONTAINER [CONTAINER...]</span><br><span class="line">* 杀掉运行中的容器：docker kill [OPTIONS] CONTAINER [CONTAINER...]</span><br><span class="line">* 删除一个或多少容器：docker rm [OPTIONS] CONTAINER [CONTAINER...]</span><br><span class="line">* 暂停容器中所有的进程: docker pause [OPTIONS] CONTAINER [CONTAINER...]</span><br><span class="line">* 恢复容器中所有的进程: docker unpause [OPTIONS] CONTAINER [CONTAINER...]</span><br><span class="line">* 创建一个新的容器但不启动它: docker create [OPTIONS] IMAGE [COMMAND] [ARG...]</span><br><span class="line">    使用docker镜像nginx:latest创建一个容器,并将容器命名为myrunoob</span><br><span class="line">    docker create  --name myrunoob  nginx:latest</span><br><span class="line">* 在运行的容器中执行命令: docker exec [OPTIONS] CONTAINER COMMAND [ARG...]</span><br><span class="line">    在容器mynginx中以交互模式执行容器内/root/runoob.sh脚本</span><br><span class="line">    docker exec -it mynginx /bin/sh /root/runoob.sh</span><br><span class="line"></span><br><span class="line">容器操作类</span><br><span class="line">* 列表：docker ps [OPTIONS]</span><br><span class="line">	列出所有在运行的容器信息: docker ps</span><br><span class="line">	列出最近创建的5个容器信息: docker ps -n 5 </span><br><span class="line">	列出所有创建的容器ID: docker ps -a -q</span><br><span class="line">* 获取容器/镜像的元数据：docker inspect [OPTIONS] NAME|ID [NAME|ID...]</span><br><span class="line">	获取镜像mysql:5.6的元信息：docker inspect mysql:5.6</span><br><span class="line">* 查看容器中运行的进程信息，支持 ps 命令参数：docker top [OPTIONS] CONTAINER [ps OPTIONS]</span><br><span class="line">	查看容器mymysql的进程信息：docker top mymysql</span><br><span class="line">* 获取容器的日志: docker logs [OPTIONS] CONTAINER</span><br><span class="line">	跟踪查看容器mynginx的日志输出: docker logs -f myngin</span><br><span class="line">* 列出指定的容器的端口映射: docker port [OPTIONS] CONTAINER [PRIVATE_PORT[/PROTO]]</span><br><span class="line">	查看容器mynginx的端口映射情况: docker port mymysql</span><br><span class="line"></span><br><span class="line">镜像仓库类</span><br><span class="line">* 登陆到一个Docker镜像仓库 docker login [OPTIONS] [SERVER]</span><br><span class="line">* 登出一个Docker镜像仓库docker logout [OPTIONS] [SERVER]</span><br><span class="line">	登陆到Docker Hub: docker login -u 用户名 -p 密码</span><br><span class="line">	登出Docker Hub: docker logout</span><br><span class="line">* 从镜像仓库中拉取或者更新指定镜像：docker pull [OPTIONS] NAME[:TAG|@DIGEST]</span><br><span class="line">* 将本地的镜像上传到镜像仓库,要先登陆到镜像仓库：docker push [OPTIONS] NAME[:TAG]</span><br><span class="line">	上传本地镜像myapache:v1到镜像仓库中: docker push myapache:v1</span><br><span class="line">* 从Docker Hub查找镜像：docker search [OPTIONS] TERM</span><br><span class="line">	从Docker Hub查找所有镜像名包含java，并且收藏数大于10的镜像: docker search -s 10 java</span><br><span class="line"></span><br><span class="line">本地镜像管理类</span><br><span class="line">* 列出本地镜像: docker images [OPTIONS] [REPOSITORY[:TAG]]</span><br><span class="line">* 删除本地一个或多少镜像: docker rmi [OPTIONS] IMAGE [IMAGE...]</span><br><span class="line">* 标记本地镜像，将其归入某一仓库: docker tag [OPTIONS] IMAGE[:TAG] [REGISTRYHOST/][USERNAME/]NAME[:TAG]</span><br><span class="line">* docker build 命令用于使用 Dockerfile 创建镜像： docker build [OPTIONS] PATH | URL | -</span><br><span class="line">	使用当前目录的 Dockerfile 创建镜像，标签为 runoob/ubuntu:v1</span><br><span class="line">	docker build -t runoob/ubuntu:v1</span><br><span class="line">	使用URL github.com/creack/docker-firefox 的 Dockerfile 创建镜像</span><br><span class="line">	docker build github.com/creack/docker-firefox</span><br><span class="line">	也可以通过 -f Dockerfile 文件的位置：</span><br><span class="line">	docker build -f /path/to/a/Dockerfile </span><br><span class="line">	在 Docker 守护进程执行 Dockerfile 中的指令前，首先会对 Dockerfile 进行语法检查，有语法错误时会返回：docker build -t test/myapp</span><br><span class="line">* 查看指定镜像的创建历史: docker history [OPTIONS] IMAGE</span><br><span class="line">* 将指定镜像保存成 tar 归档文件: docker save [OPTIONS] IMAGE [IMAGE...]</span><br><span class="line">* 从归档文件中创建镜像: docker import [OPTIONS] file|URL|- [REPOSITORY[:TAG]]</span><br><span class="line">	从镜像归档文件my_ubuntu_v3.tar创建镜像，命名为runoob/ubuntu:v4</span><br><span class="line">	docker import  my_ubuntu_v3.tar runoob/ubuntu:v4  </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">run、start、stop、restart OPTIONS说明：</span><br><span class="line">-a stdin: 指定标准输入输出内容类型，可选 STDIN/STDOUT/STDERR 三项；</span><br><span class="line">-d: 后台运行容器，并返回容器ID；</span><br><span class="line">-i: 以交互模式运行容器，通常与 -t 同时使用；</span><br><span class="line">-p: 端口映射，格式为：主机(宿主)端口:容器端口</span><br><span class="line">-t: 为容器重新分配一个伪输入终端，通常与 -i 同时使用；</span><br><span class="line">--name="nginx-lb": 为容器指定一个名称；</span><br><span class="line">--dns 8.8.8.8: 指定容器使用的DNS服务器，默认和宿主一致；</span><br><span class="line">--dns-search example.com: 指定容器DNS搜索域名，默认和宿主一致；</span><br><span class="line">-h "mars": 指定容器的hostname；</span><br><span class="line">-e username="ritchie": 设置环境变量；</span><br><span class="line">--env-file=[]: 从指定文件读入环境变量；</span><br><span class="line">--cpuset="0-2" or --cpuset="0,1,2": 绑定容器到指定CPU运行；</span><br><span class="line">-m :设置容器使用内存最大值；</span><br><span class="line">--net="bridge": 指定容器的网络连接类型，支持 bridge/host/none/container: 四种类型；</span><br><span class="line">--link=[]: 添加链接到另一个容器；</span><br><span class="line">--expose=[]: 开放一个端口或一组端口；</span><br><span class="line"></span><br><span class="line">kill OPTIONS说明：</span><br><span class="line">-s :向容器发送一个信号</span><br><span class="line"></span><br><span class="line">rm OPTIONS说明：</span><br><span class="line">-f :通过SIGKILL信号强制删除一个运行中的容器</span><br><span class="line">-l :移除容器间的网络连接，而非容器本身</span><br><span class="line">-v :-v 删除与容器关联的卷</span><br><span class="line"></span><br><span class="line">exec OPTIONS说明：</span><br><span class="line">-d :分离模式: 在后台运行</span><br><span class="line">-i :即使没有附加也保持STDIN 打开</span><br><span class="line">-t :分配一个伪终端</span><br><span class="line"></span><br><span class="line">ps OPTIONS说明：</span><br><span class="line">-a :显示所有的容器，包括未运行的。</span><br><span class="line">-f :根据条件过滤显示的内容。</span><br><span class="line">--format :指定返回值的模板文件。</span><br><span class="line">-l :显示最近创建的容器。</span><br><span class="line">-n :列出最近创建的n个容器。</span><br><span class="line">--no-trunc :不截断输出。</span><br><span class="line">-q :静默模式，只显示容器编号。</span><br><span class="line">-s :显示总的文件大小。</span><br><span class="line"></span><br><span class="line">inspect OPTIONS说明：</span><br><span class="line">-f :指定返回值的模板文件。</span><br><span class="line">-s :显示总的文件大小。</span><br><span class="line">--type :为指定类型返回JSON。</span><br><span class="line"></span><br><span class="line">logs OPTIONS说明：</span><br><span class="line">-f : 跟踪日志输出</span><br><span class="line">--since :显示某个开始时间的所有日志</span><br><span class="line">-t : 显示时间戳</span><br><span class="line">--tail :仅列出最新N条容器日志</span><br><span class="line"></span><br><span class="line">pull OPTIONS说明：</span><br><span class="line">-a :拉取所有 tagged 镜像</span><br><span class="line">--disable-content-trust :忽略镜像的校验,默认开启</span><br><span class="line"></span><br><span class="line">push OPTIONS说明：</span><br><span class="line">--disable-content-trust :忽略镜像的校验,默认开启</span><br><span class="line"></span><br><span class="line">search OPTIONS说明：</span><br><span class="line">--automated :只列出 automated build类型的镜像；</span><br><span class="line">--no-trunc :显示完整的镜像描述；</span><br><span class="line">-s :列出收藏数不小于指定值的镜像。</span><br><span class="line"></span><br><span class="line">images OPTIONS说明：</span><br><span class="line">-a :列出本地所有的镜像（含中间映像层，默认情况下，过滤掉中间映像层）；</span><br><span class="line">--digests :显示镜像的摘要信息；</span><br><span class="line">-f :显示满足条件的镜像；</span><br><span class="line">--format :指定返回值的模板文件；</span><br><span class="line">--no-trunc :显示完整的镜像信息；</span><br><span class="line">-q :只显示镜像ID。</span><br><span class="line"></span><br><span class="line">rmi OPTIONS说明：</span><br><span class="line">-f :强制删除；</span><br><span class="line">--no-prune :不移除该镜像的过程镜像，默认移除；</span><br><span class="line"></span><br><span class="line">build OPTIONS说明：</span><br><span class="line">--build-arg=[] :设置镜像创建时的变量；</span><br><span class="line">--cpu-shares :设置 cpu 使用权重；</span><br><span class="line">--cpu-period :限制 CPU CFS周期；</span><br><span class="line">--cpu-quota :限制 CPU CFS配额；</span><br><span class="line">--cpuset-cpus :指定使用的CPU id；</span><br><span class="line">--cpuset-mems :指定使用的内存 id；</span><br><span class="line">--disable-content-trust :忽略校验，默认开启；</span><br><span class="line">-f :指定要使用的Dockerfile路径；</span><br><span class="line">--force-rm :设置镜像过程中删除中间容器；</span><br><span class="line">--isolation :使用容器隔离技术；</span><br><span class="line">--label=[] :设置镜像使用的元数据；</span><br><span class="line">-m :设置内存最大值；</span><br><span class="line">--memory-swap :设置Swap的最大值为内存+swap，"-1"表示不限swap；</span><br><span class="line">--no-cache :创建镜像的过程不使用缓存；</span><br><span class="line">--pull :尝试去更新镜像的新版本；</span><br><span class="line">--quiet, -q :安静模式，成功后只输出镜像 ID；</span><br><span class="line">--rm :设置镜像成功后删除中间容器；</span><br><span class="line">--shm-size :设置/dev/shm的大小，默认值是64M；</span><br><span class="line">--ulimit :Ulimit配置。</span><br><span class="line">--tag, -t: 镜像的名字及标签，通常 name:tag 或者 name 格式；可以在一次构建中为一个镜像设置多个标签。</span><br><span class="line">--network: 默认 default。在构建期间设置RUN指令的网络模式</span><br><span class="line"></span><br><span class="line">history OPTIONS说明：</span><br><span class="line">-H :以可读的格式打印镜像大小和日期，默认为true；</span><br><span class="line">--no-trunc :显示完整的提交记录；</span><br><span class="line">-q :仅列出提交记录ID。</span><br><span class="line"></span><br><span class="line">import OPTIONS说明：</span><br><span class="line">-c :应用docker 指令创建镜像；</span><br><span class="line">-m :提交时的说明文字；</span><br><span class="line"></span><br><span class="line">搜索docker hub镜像：docker search tutorial</span><br><span class="line">下载容器镜像：docker pull 用户名/镜像名</span><br><span class="line">* 示例：docker pull learn/tutorial</span><br><span class="line">* 镜像都是按照用户名/镜像名的方式来存储的</span><br><span class="line">* 有一组比较特殊的镜像，比如ubuntu这类基础镜像，经过官方的验证，值得信任，可以直接用镜像名来检索到</span><br><span class="line">查看本地镜像：docker images|grep tomcat</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">安装程序：在容器里面安装一个简单的程序(ping)</span><br><span class="line">* 示例：docker run learn/tutorial apt-get install -y ping</span><br><span class="line">* 我们之前下载的tutorial镜像是基于ubuntu的</span><br><span class="line">* 所以你可以使用ubuntu的apt-get命令来安装ping程序：apt-get install -y ping。</span><br><span class="line">* apt-get 命令执行完毕之后，容器就会停止，但对容器的改动不会丢失。</span><br><span class="line"></span><br><span class="line">保存对容器的修改：当你对某一个容器做了修改之后（通过在容器中运行某一个命令），可以把对容器的修改保存下来，这样下次可以从保存后的最新状态运行该容器。docker中保存状态的过程称之为committing，它保存的新旧状态之间的区别，从而产生一个新的版本。</span><br><span class="line">* 示例：docker commit 698 learn/ping</span><br><span class="line">* 首先使用docker ps -l 命令获得安装完ping命令之后容器的id。然后把这个镜像保存为learn/ping。</span><br><span class="line">* 你需要指定要提交保存容器的ID。(译者按：通过docker ps -l 命令获得)</span><br><span class="line">* 无需拷贝完整的id，通常来讲最开始的三至四个字母即可区分。（译者按：非常类似git里面的版本号)</span><br><span class="line"></span><br><span class="line">运行：docker run 容器镜像名</span><br><span class="line">* 示例：docker run learn/tutorial echo "hello word"</span><br><span class="line">* 通过docker run命令可以启动某一个镜像，并运行一个命令。</span><br><span class="line">* docker run命令有两个参数，一个是镜像名，一个是要在镜像中运行的命令。</span><br><span class="line"></span><br><span class="line">检查运行中的镜像：</span><br><span class="line">* 示例： docker inspect efe</span><br><span class="line">* 使用docker ps命令可以查看所有正在运行中的容器列表</span><br><span class="line">* 使用docker inspect命令我们可以查看更详细的关于某一个容器的信息。</span><br><span class="line">* 可以使用镜像id的前面部分，不需要完整的id。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">运行新的镜像：对一个镜像提交修改之后，就可以运行它里面新安装的命令了。</span><br><span class="line">示例：docker run lean/ping ping www.google.com</span><br><span class="line">* 一定要使用新的镜像名learn/ping来运行ping命令。(译者按：最开始下载的learn/tutorial镜像中是没有ping命令的)</span><br><span class="line"></span><br><span class="line">发布自己的镜像：我们可以将其发布到官方的索引网站。还记得我们最开始下载的learn/tutorial镜像吧，我们也可以把我们自己编译的镜像发布到索引页面，一方面可以自己重用，另一方面也可以分享给其他人使用。</span><br><span class="line">* 示例：docker push learn/ping</span><br><span class="line">* docker images命令可以列出所有安装过的镜像。</span><br><span class="line">* docker push命令可以将某一个镜像发布到官方网站。</span><br><span class="line">* 你只能将镜像发布到自己的空间下面。这个模拟器登录的是learn帐号。</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/21/jenkins持续集成/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lan Hui · Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Java">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/21/jenkins持续集成/" itemprop="url">Jenkins持续集成</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-21T10:00:00+08:00">
+                2018-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>docker+jenkins+gitlab+maven 持续集成</p>
+<h4 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">安装：yum install Docker</span><br><span class="line">启动：service docker start</span><br><span class="line">查看：ps -ef|grep docker</span><br></pre></td></tr></table></figure>
+<h4 id="docker-容器中安装-jenkins"><a href="#docker-容器中安装-jenkins" class="headerlink" title="docker 容器中安装 jenkins"></a>docker 容器中安装 jenkins</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">1、拉jenkins镜像：docker pull jenkins </span><br><span class="line">2、查看镜像：docker images | grep jenkins </span><br><span class="line">3、启动镜像：docker run -d --name myjenkins -p 49001:8080 -v /home/jenkins_home:/home/jenkins_home jenkins</span><br><span class="line">    参数说明：</span><br><span class="line">      -d：后台挂起运行</span><br><span class="line">      --name：指定容器名称</span><br><span class="line">      -p：docker内部端口和外部端口映射</span><br><span class="line">      -v：指定挂载目录</span><br><span class="line">      </span><br><span class="line">如果启动后有问题，可以移除容器。</span><br><span class="line">停止：docker stop myjenkins</span><br><span class="line">删除：docker rm myjenkins</span><br><span class="line">rm 和 rmi 区别是：rm是删除容器，rmi是删除镜像</span><br></pre></td></tr></table></figure>
+<h4 id="初始化首次访问"><a href="#初始化首次访问" class="headerlink" title="初始化首次访问"></a>初始化首次访问</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、访问：http://IP:PORT</span><br><span class="line">2、linux上拷贝文件中的初始密码：/var/jenkins_home/secrets/initialAdminPassword</span><br><span class="line">3、输入密码解锁 jenkins</span><br><span class="line">4、安装plugin插件(git，maven，gitlab，Dingding)</span><br><span class="line">5、设置用户名和密码</span><br></pre></td></tr></table></figure>
+<h4 id="配置插件"><a href="#配置插件" class="headerlink" title="配置插件"></a>配置插件</h4><p>在docker容器里生成ssh秘钥：<code>ssh-keygen</code> </p>
+<p>配置gitlab和jenkins授信，这样git才能拉取代码</p>
+<blockquote>
+<p>配置gitlab：在gitlab&gt;profile settings&gt;ssh keys 配置生成的公钥，粘贴id_rsa.pub所有内容</p>
+<p>配置jenkins：凭据&gt;添加凭据&gt;</p>
+<p>​    选择类型为：ssh username with private key</p>
+<p>​    username：起个名字</p>
+<p>​    勾选enter directly：粘贴 id_rsa中所有的内容</p>
+</blockquote>
+<h4 id="新建项目"><a href="#新建项目" class="headerlink" title="新建项目"></a>新建项目</h4><p>进入docker容器命令：docker exec -it jenkins /bin/bash</p>
+<p>查找目录：which|whereis</p>
+<p>获取安装包：wget -c <a href="https://nginx.org/download/nginx-1.13.1.tar.gz" target="_blank" rel="noopener">https://nginx.org/download/nginx-1.13.1.tar.gz</a></p>
+<p>解压：tar -zxvf nginx-1.13.1.tar.gz </p>
+<p>启动、停止nginx</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/local/nginx/sbin/</span><br><span class="line">./nginx </span><br><span class="line">./nginx -s quit</span><br><span class="line">ps aux|grep nginx</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/21/IO模型/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lan Hui · Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Java">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/11/21/IO模型/" itemprop="url">IO 模型</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-21T10:00:00+08:00">
+                2018-11-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>阻塞式I/O模型</p>
+<ul>
+<li>应用程序一直等待，直到数据拷贝到应用程序缓冲区或者发生错误才返回，这段时间内一直被阻塞</li>
+</ul>
+<p>非阻塞式I/O模型</p>
+<ul>
+<li>应用程序持续的轮训内核，查看某个操作是否完成，如果完成，那么程序开始阻塞获取数据，这种模型叫非阻塞</li>
+</ul>
+<p>I/O多路复用（事件驱动）模型</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/Hexo使用NexT主题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lan Hui · Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Java">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/14/Hexo使用NexT主题/" itemprop="url">Hexo使用NexT主题</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T16:20:22+08:00">
+                2018-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>在hexo安装目录下，右键：git base here，输入命令：</p>
+<p><code>git clone https://github.com/iissnan/hexo-theme-next themes/next</code></p>
+<h4 id="启用主体"><a href="#启用主体" class="headerlink" title="启用主体"></a>启用主体</h4><p>所有 Hexo 主题启用的模式一样。 当 克隆/下载 完成后，打开 站点配置文件( _config.yml)， 找到 <code>theme</code> 字段，并将其值更改为 <code>next</code> </p>
+<p><code>theme: next</code></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/14/Hexo使用NexT主题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/Hexo&Github搭建自己的博客/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lan Hui · Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Java">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/14/Hexo&Github搭建自己的博客/" itemprop="url">Hexo&Github搭建自己的博客</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T16:20:22+08:00">
+                2018-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="Hexo-amp-Github搭建自己的博客"><a href="#Hexo-amp-Github搭建自己的博客" class="headerlink" title="Hexo&amp;Github搭建自己的博客"></a><strong>Hexo&amp;Github搭建自己的博客</strong></h3><h4 id="1、安装：Node-Js"><a href="#1、安装：Node-Js" class="headerlink" title="1、安装：Node.Js"></a>1、安装：<a href="http://nodejs.org/" target="_blank" rel="noopener">Node.Js</a></h4><h4 id="2、安装：Git"><a href="#2、安装：Git" class="headerlink" title="2、安装：Git"></a>2、安装：<a href="http://git-scm.com/" target="_blank" rel="noopener">Git</a></h4><h4 id="3、Github-账户注册和新建项目"><a href="#3、Github-账户注册和新建项目" class="headerlink" title="3、Github 账户注册和新建项目"></a>3、<a href="https://github.com" target="_blank" rel="noopener">Github</a> 账户注册和新建项目</h4><h4 id="4、安装-Hexo"><a href="#4、安装-Hexo" class="headerlink" title="4、安装 Hexo"></a>4、安装 <a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo</a></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">安装好了nodejs和git及github后</span><br><span class="line">打开cmd: 切换到你的 &lt;folder&gt; 上级目录，执行以下命令：</span><br><span class="line"></span><br><span class="line">$ 安装hexo：npm install -g hexo-cli</span><br><span class="line">$ 检查是否成功：hexo -v</span><br><span class="line">$ 初始化文件夹：hexo init &lt;folder&gt;</span><br><span class="line">$ 进入文件夹：cd &lt;folder&gt;</span><br><span class="line">$ 安装依赖：npm install</span><br><span class="line">$ 生成文件：hexo g</span><br><span class="line">$ 启动服务：hexo s</span><br><span class="line">$ 访问：http://localhost:4000</span><br><span class="line">$ 切换端口(如果端口被占用)：hexo server -p 端口号</span><br></pre></td></tr></table></figure>
+<p>注：folder为你的bolg文件夹名称</p>
+<p>到这步一步，项目能本地访问啦，接下来同步到github上让外网能直接访问！</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/14/Hexo&Github搭建自己的博客/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/Hexo&Github解决多终端同步/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lan Hui · Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Java">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/14/Hexo&Github解决多终端同步/" itemprop="url">Hexo&Github解决多终端同步</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T16:20:22+08:00">
+                2018-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Hexo-amp-Github解决多终端同步"><a href="#Hexo-amp-Github解决多终端同步" class="headerlink" title="Hexo&amp;Github解决多终端同步"></a>Hexo&amp;Github解决多终端同步</h3><p>安装Node.js</p>
+<p>安装Git</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/09/14/Markerdown基础语法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lan Hui · Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Java">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/14/Markerdown基础语法/" itemprop="url">MarkerDown基础语法</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-14T16:20:22+08:00">
+                2018-09-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MarkerDown/" itemprop="url" rel="index">
+                    <span itemprop="name">MarkerDown</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="1-标题"><a href="#1-标题" class="headerlink" title="1.标题"></a>1.标题</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">语法：</span><br><span class="line"># 这是一级标题</span><br><span class="line">## 这是二级标题</span><br><span class="line">### 这是三级标题</span><br><span class="line">#### 这是四级标题</span><br><span class="line">##### 这是五级标题</span><br><span class="line">###### 这是六级标题</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/14/Markerdown基础语法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/19/任务表单/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lan Hui · Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Java">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/19/任务表单/" itemprop="url">activiti-任务表单</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-19T16:20:22+08:00">
+                2018-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/activiti/" itemprop="url" rel="index">
+                    <span itemprop="name">activiti</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="任务表单"><a href="#任务表单" class="headerlink" title="任务表单"></a>任务表单</h4><ul>
+<li><p>activiti:formProperty属性</p>
+<ul>
+<li>id：字段唯一标识，保存字段是此字段作为key</li>
+<li>type：字段类型 <code>string</code> <code>long</code> <code>enum</code> <code>date</code> <code>boolean</code></li>
+<li>value：字段的值</li>
+<li>expression：表达式，通过计算表达式设置字段的值，<code>expression = #{leave.reason}</code></li>
+<li>variable：将字段的值以variable指定变量名保存</li>
+<li>default：字段的默认值</li>
+<li>datePattern：属性type的值为：date时，需要设置此属性定义日期格式</li>
+<li>readable：是否可读</li>
+<li>writable：是否可写</li>
+<li>required：是否必填项</li>
+<li>form values：当<code>type=enum</code>时，需要制定多个可选值，在<code>activiti:form</code>标签中插入<code>activiti:value</code></li>
+</ul>
+</li>
+<li><p>动态表单</p>
+</li>
+<li>外置表单</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/19/用户与组及部署管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Lan Hui · Hu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/favicon.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Java">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/08/19/用户与组及部署管理/" itemprop="url">activiti-用户与组及部署管理</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-19T16:20:22+08:00">
+                2018-08-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/activiti/" itemprop="url" rel="index">
+                    <span itemprop="name">activiti</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <ul>
+<li><strong>用户</strong>和<strong>组</strong>主要是应用于 <strong>用户任务</strong></li>
+<li><code>IdentityService</code>接口</li>
+</ul>
+<h4 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">IdentityService identityService = activiti.getIdtityService();</span><br><span class="line"><span class="comment">//创建</span></span><br><span class="line">User user = identityService.newUser(<span class="string">"userName"</span>);</span><br><span class="line"><span class="comment">//保存</span></span><br><span class="line">identityService.saveUser(user);</span><br><span class="line"><span class="comment">//查询</span></span><br><span class="line">User userInDb = identityService.createUserQuery().userId(<span class="string">"userName"</span>).singleResult();</span><br><span class="line"><span class="comment">//删除用户</span></span><br><span class="line">identityService.deleteUser(<span class="string">"userName"</span>);</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/19/用户与组及部署管理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/favicon.png"
+                alt="Lan Hui · Hu" />
+            
+              <p class="site-author-name" itemprop="name">Lan Hui · Hu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lan Hui · Hu</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>
